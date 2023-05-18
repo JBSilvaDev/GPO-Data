@@ -20,6 +20,9 @@ class BrowserController:
         else:
             subprocess.Popen(["python", "-m", "webdriver_manager.chrome", "--quiet"])
 
+        # Aguarde um tempo para o download do webdriver ser concluído
+        time.sleep(5)
+
         # Restante do seu código aqui
         service = Service(ChromeDriverManager().install())
         service.creation_flags = CREATE_NO_WINDOW
