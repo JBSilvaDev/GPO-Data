@@ -25,7 +25,6 @@ class BrowserController:
 
         # Restante do seu código aqui
         service = Service(ChromeDriverManager().install())
-        service.creation_flags = CREATE_NO_WINDOW
         chrome_options = webdriver.ChromeOptions()
         chrome_options.add_argument("--headless")
         chrome_options.add_argument("--no-sandbox")
@@ -39,6 +38,7 @@ class BrowserController:
         }
         chrome_options.add_experimental_option("prefs", prefsChrome)
 
+        service.creation_flags = CREATE_NO_WINDOW
         self.inBrowser = webdriver.Chrome(service=service, options=chrome_options)
 
     def wait_elements(self, element: str):
