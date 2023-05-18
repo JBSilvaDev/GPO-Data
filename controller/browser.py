@@ -10,6 +10,8 @@ from subprocess import CREATE_NO_WINDOW
 from tqdm import tqdm
 import os
 os.environ["WDM_LOG_LEVEL"] = "0"
+os.environ["WDM_HIDE_OUTPUT"] = "true"
+
 tqdm.monitor_interval = 0
 
 
