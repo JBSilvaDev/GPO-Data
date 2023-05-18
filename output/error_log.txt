@@ -1,0 +1,16 @@
+Traceback (most recent call last):
+  File "main.py", line 12, in main
+  File "controller\gpoController\gpo_controller.py", line 12, in __init__
+  File "controller\browser.py", line 21, in __init__
+  File "webdriver_manager\chrome.py", line 39, in install
+  File "webdriver_manager\core\manager.py", line 30, in _get_driver_path
+  File "webdriver_manager\core\download_manager.py", line 28, in download_file
+  File "webdriver_manager\core\http.py", line 39, in get
+  File "webdriver_manager\core\utils.py", line 264, in show_download_progress
+  File "tqdm\std.py", line 1095, in __init__
+  File "tqdm\std.py", line 1344, in refresh
+  File "tqdm\std.py", line 1492, in display
+  File "tqdm\std.py", line 347, in print_status
+  File "tqdm\std.py", line 340, in fp_write
+  File "tqdm\utils.py", line 71, in __getattr__
+AttributeError: 'NoneType' object has no attribute 'write'
