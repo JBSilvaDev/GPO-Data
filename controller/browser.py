@@ -1,3 +1,5 @@
+import subprocess
+import platform
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
@@ -6,23 +8,19 @@ from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.support.select import Select
 from selenium.webdriver.common.keys import Keys
 import time
-from subprocess import CREATE_NO_WINDOW
-from tqdm import tqdm
-import os
-os.environ["WDM_LOG_LEVEL"] = "0"
-os.environ["WDM_HIDE_OUTPUT"] = "true"
-
-tqdm.monitor_interval = 0
-
-
-
-
 
 class BrowserController:
     def __init__(self):
-        service = Service(ChromeDriverManager().install())
-        service.creation_flags = CREATE_NO_WINDOW  # não exibir terminal chrome
+        # Executa o download do webdriver em um processo separado
+        if platform.system() == "Windows":
+            startupinfo = subprocess.STARTUPINFO()
+            startupinfo.dwFlags |= subprocess.STARTF_USESHOWWINDOW
+            subprocess.Popen(["python", "-m", "webdriver_manager.chrome", "--quiet"], startupinfo=startupinfo)
+        else:
+            subprocess.Popen(["python", "-m", "webdriver_manager.chrome", "--quiet"])
 
+        # Restante do seu código aqui
+        service = Service(ChromeDriverManager().install())
         chrome_options = webdriver.ChromeOptions()
         chrome_options.add_argument("--headless")
         chrome_options.add_argument("--no-sandbox")
