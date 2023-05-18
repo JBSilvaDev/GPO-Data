@@ -1,4 +1,5 @@
 import subprocess
+from subprocess import CREATE_NO_WINDOW
 import platform
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
@@ -21,9 +22,11 @@ class BrowserController:
 
         # Restante do seu código aqui
         service = Service(ChromeDriverManager().install())
+        service.creation_flags = CREATE_NO_WINDOW
         chrome_options = webdriver.ChromeOptions()
         chrome_options.add_argument("--headless")
         chrome_options.add_argument("--no-sandbox")
+        chrome_options.add_argument("--disable-gpu")
         chrome_options.add_argument("--ignore-certificate-errors")
         chrome_options.add_argument("--disable-dev-shm-usage")
         prefsChrome = {
