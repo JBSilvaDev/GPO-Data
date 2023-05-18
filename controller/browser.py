@@ -8,13 +8,13 @@ from selenium.webdriver.common.keys import Keys
 import time
 from subprocess import CREATE_NO_WINDOW
 from tqdm import tqdm
+tqdm.monitor_interval = 0
 
 
 
 
 class BrowserController:
     def __init__(self):
-        tqdm.monitor_interval = 0
         service = Service(ChromeDriverManager().install())
         service.creation_flags = CREATE_NO_WINDOW  # não exibir terminal chrome
 
