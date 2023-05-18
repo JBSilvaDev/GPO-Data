@@ -2,12 +2,12 @@ import tkinter as tk
 
 class LauncherTKInter:
     def __init__(self, gpo_controller):
-        self.icon = r"C:\Users\julianobs\Desktop\gestao_porto\icon\portoPNG.ico"
+        # self.icon = r".\icon\portoPNG.ico"
         self.gpo_controller = gpo_controller
         self.janela = tk.Tk()
         self.janela.maxsize(900, 600)
         self.janela.title("Consulta GPO")
-        self.janela.iconbitmap(self.icon)
+        # self.janela.iconbitmap(self.icon)
         
         self.labelPec = tk.Label(self.janela, text="Informe a PEC aqui!", font='Arial 10')
         self.labelPec.grid(row=0, column=1, padx=5, pady=10)

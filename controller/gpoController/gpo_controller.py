@@ -1,6 +1,8 @@
 import time
 from models.gpo_model import GpoModel
 from controller.browser import BrowserController
+from tqdm import tqdm
+tqdm.monitor_interval = 0
 
 
 class GpoController(BrowserController):
