@@ -1,4 +1,6 @@
 from tqdm import tqdm
+import os
+os.environ["WDM_LOG_LEVEL"] = "0"
 tqdm.monitor_interval = 0
 from view.launcher_tkinter import LauncherTKInter
 from controller.gpoController.gpo_controller import GpoController

@@ -8,7 +8,10 @@ from selenium.webdriver.common.keys import Keys
 import time
 from subprocess import CREATE_NO_WINDOW
 from tqdm import tqdm
+import os
+os.environ["WDM_LOG_LEVEL"] = "0"
 tqdm.monitor_interval = 0
+
 
 
 

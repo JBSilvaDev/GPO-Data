@@ -2,6 +2,8 @@ import time
 from models.gpo_model import GpoModel
 from controller.browser import BrowserController
 from tqdm import tqdm
+import os
+os.environ["WDM_LOG_LEVEL"] = "0"
 tqdm.monitor_interval = 0
 
 
