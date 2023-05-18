@@ -26,7 +26,7 @@ class GpoController(BrowserController):
         ).send_keys(self.gpo_model.senha)
         self.wait_elements('//*[@id="tbrImg"]').click()
 
-    def getPrVao(self, pec:str, textInfoPrVao):
+    def getPrVao(self, pec:str):
         self.inBrowser.get(self.gpo_model.links["prvao"] + pec)
         try:
             pr_element = self.wait_elements('//*[@id="TQuery"]/tbody/tr[2]/td[2]')
@@ -37,7 +37,8 @@ class GpoController(BrowserController):
         except:
             pr = 'Não liberada'
             vao = 'AV'
-        textInfoPrVao.set(f"PR {pr} - VÃO {vao}")
+        return f"PR {pr} - VÃO {vao}"
+    
 
     def killChrome(self):
         self.inBrowser.close()
