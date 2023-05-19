@@ -1,6 +1,0 @@
-Traceback (most recent call last):
-  File "e:\Development\WorkStation\GPO-Data\main.py", line 13, in main
-    launcher = LauncherTKInter(gpo_controller)
-  File "e:\Development\WorkStation\GPO-Data\view\launcher_tkinter.py", line 12, in __init__
-    self.text_info_pr_vao = self.gpo_controller.getPrVao(self.pec_num)
-TypeError: GpoController.getPrVao() missing 1 required positional argument: 'textInfoPrVao'
