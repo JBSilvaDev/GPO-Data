@@ -4,5 +4,5 @@ class GpoModel:
             "home_login": "https://web.portocel.com.br/gpo/",
             "prvao": "https://web.portocel.com.br/gpo/cadastro.aspx?WCI=frmEdtPrevisaoEnvioCarga&Mv=Sql&codRegistro=",
         }
-        self.usuario = '-'
-        self.senha = '-'
+        self.usuario = "-"
+        self.senha = "-"

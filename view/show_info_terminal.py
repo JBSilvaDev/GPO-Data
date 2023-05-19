@@ -6,7 +6,7 @@ class ShowInfoTerminal:
         pass
 
     def show_gpo_item_list(self, msg, pec_num):
-        header = f"PR - {pec_num} | UBC - {msg[5]}"
+        header = f"PEC - {pec_num} | UBC - {msg[5]}"
         material = f"Material: {msg[4]}"
         output = f"""
 {'=' * 100}
