@@ -32,7 +32,7 @@ class BrowserController:
     def wait_elements(self, element):
         max_loop = 0
         list_elements = self.in_browser.find_elements(By.XPATH, element)
-        while len(list_elements) < 1 and max_loop < 15:
+        while len(list_elements) < 1 and max_loop < 10:
             time.sleep(1)
             max_loop += 1
         time.sleep(1)
